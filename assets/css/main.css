@@ -1,0 +1,31 @@
+:root {
+  --header-height: 10vh;
+}
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+}
+#header-padding {
+  height: var(--header-height);
+}
+header {
+  display: flex;
+  overflow-y: auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  > img {
+    padding: 0.3rem;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  h1 {
+    padding-right: 0.7rem; /* adds up to 1rem next to img*/
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
