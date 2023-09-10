@@ -1,17 +1,15 @@
 :root {
   --header-height: 10vh;
 }
-header {
+#main-header-padding {
+  height: var(--header-height);
+}
+#main-header {
   top: 0;
   left: 0;
   width: 100%;
   height: var(--header-height);
   position: fixed;
-}
-#main-header-padding {
-  height: var(--header-height);
-}
-#main-header {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -25,7 +23,6 @@ header {
   }
   > .burger-menu {
     width: 20px;
-    min-width: 20px;
     height: 20px;
     margin: 0 1rem 0 auto;
   }
