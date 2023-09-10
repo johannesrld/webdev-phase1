@@ -13,7 +13,6 @@ header {
 }
 header {
   display: flex;
-  overflow-y: auto;
   flex-wrap: nowrap;
   align-items: center;
   > img {
@@ -21,7 +20,7 @@ header {
     max-height: 100%;
     object-fit: contain;
   }
-  h1 {
+  > h1 {
     padding-right: 0.7rem; /* adds up to 1rem next to img*/
   }
 }
