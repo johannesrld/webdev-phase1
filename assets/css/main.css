@@ -39,3 +39,11 @@ body {
 
 }
 
+#main-navigation {
+  display: none;
+  > ul {
+    display: flex;
+    justify-items: normal;
+    gap: 1.5rem;
+  }
+}
