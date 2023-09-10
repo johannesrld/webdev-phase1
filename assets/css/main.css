@@ -1,9 +1,16 @@
 :root {
   --header-height: 10vh;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 #main-header-padding {
   height: var(--header-height);
 }
+
 #main-header {
   top: 0;
   left: 0;
@@ -13,21 +20,22 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+
   > img {
     padding: 0.3rem;
     max-height: 100%;
     object-fit: contain;
   }
+
   > h1 {
     padding-right: 0.7rem; /* adds up to 1rem next to img*/
   }
+
   > .burger-menu {
     width: 20px;
     height: 20px;
     margin: 0 1rem 0 auto;
   }
+
 }
-body {
-  display: flex;
-  flex-direction: column;
-}
+
