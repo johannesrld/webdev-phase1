@@ -47,3 +47,13 @@ body {
     gap: 1.5rem;
   }
 }
+
+#main-footer {
+  display: flex;
+  height: 10vh;
+  flex-direction: column;
+  > ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
