@@ -7,6 +7,17 @@ body {
   flex-direction: column;
 }
 
+main {
+  > aside {
+    display: none;
+    visibility: hidden;
+  }
+  > #article-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 #main-header-padding {
   height: var(--header-height);
 }
