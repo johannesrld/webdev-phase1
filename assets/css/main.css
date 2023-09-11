@@ -1,11 +1,13 @@
 :root {
   --header-height: 10vh;
 }
+body {
+  width: fit-content;
+}
 
 main {
   > aside {
     display: none;
-    visibility: hidden;
   }
   > #article-container {
     display: flex;
