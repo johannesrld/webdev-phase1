@@ -2,11 +2,6 @@
   --header-height: 10vh;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-
 main {
   > aside {
     display: none;
@@ -47,7 +42,6 @@ main {
     height: 20px;
     margin: 0 1rem 0 auto;
   }
-
 }
 
 #main-navigation {
