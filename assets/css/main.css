@@ -1,8 +1,5 @@
-:root {
-  --header-height: 10vh;
-}
 body {
-  width: fit-content;
+  width: fit-content; /*Fixes a bug in chrome*/
 }
 
 main {
@@ -16,7 +13,6 @@ main {
 }
 
 #main-header {
-  background-color: oklch(95% 0.03 93.11);
   top: 0;
   left: 0;
   position: sticky;
@@ -37,7 +33,6 @@ main {
 
   > #burger-menu {
     display: initial;
-    background-color: lightgrey;
     @media only screen and (min-width: 768px) {
       display: none;
     }
