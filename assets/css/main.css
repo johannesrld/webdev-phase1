@@ -1,7 +1,6 @@
-
 main {
   max-width: 960px;
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 900px) {
     display: flex;
     margin: 0 auto;
     flex-direction: row-reverse;
@@ -9,7 +8,7 @@ main {
   }
   > aside {
     display: none;
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 900px) {
       display: initial;
       width: 35%;
       flex-shrink: 0;
@@ -18,9 +17,10 @@ main {
   > #article-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem;
     > article {
-      @media only screen and (min-width: 800px) {
-        width: 50%;
+      @media only screen and (min-width: 900px) {
+        width: 48%;
         height: 50%;
         flex-shrink: 0;
       }
