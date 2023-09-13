@@ -1,14 +1,30 @@
-body {
-  width: fit-content; /*Fixes a bug in chrome*/
-}
 
 main {
+  max-width: 960px;
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
   > aside {
     display: none;
+    @media only screen and (min-width: 768px) {
+      display: initial;
+      width: 35%;
+      flex-shrink: 0;
+    }
   }
   > #article-container {
     display: flex;
     flex-wrap: wrap;
+    > article {
+      @media only screen and (min-width: 768px) {
+        width: 50%;
+        height: 50%;
+        flex-shrink: 0;
+      }
+    }
   }
 }
 
