@@ -37,7 +37,7 @@ main {
   left: 0;
   position: sticky;
   display: grid;
-  grid-template: 1fr min-content / fit-content 1fr fit-content;
+  grid-template: 1fr min-content / fit-content(90px) 1fr fit-content(90px);
   padding: 0 0.5rem;
   gap: 0.5rem;
 
