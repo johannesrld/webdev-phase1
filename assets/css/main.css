@@ -1,7 +1,11 @@
 
+:root {
+  --small-viewport-width: 600px;
+}
+
 main {
   max-width: 960px;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: var(--small-viewport-width)) {
     display: flex;
     margin: 0 auto;
     flex-direction: row-reverse;
@@ -9,7 +13,7 @@ main {
   }
   > aside {
     display: none;
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: var(--small-viewport-width)) {
       display: initial;
       width: 35%;
       flex-shrink: 0;
@@ -19,7 +23,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     > article {
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: var(--small-viewport-width)) {
         width: 50%;
         height: 50%;
         flex-shrink: 0;
@@ -33,7 +37,7 @@ main {
   left: 0;
   position: sticky;
   display: grid;
-  grid-template: 1fr min-content / fit-content(90px) 1fr fit-content(90px);
+  grid-template: 1fr min-content / fit-content 1fr fit-content;
   padding: 0 0.5rem;
   gap: 0.5rem;
 
@@ -49,7 +53,7 @@ main {
 
   > #burger-menu {
     display: initial;
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: var(--small-viewport-width)) {
       display: none;
     }
     width: 50px;
@@ -65,7 +69,7 @@ main {
     grid-row: 2;
     grid-column: 1 / 3;
     align-self: center;
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: var(--small-viewport-width)) {
       display: initial;
     }
     > ul {
@@ -83,7 +87,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: var(--small-viewport-width)) {
     flex-direction: row;
     align-items: center;
   }
