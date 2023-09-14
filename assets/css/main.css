@@ -48,7 +48,7 @@ main {
   }
 
   > #burger-menu {
-    background-color: rebeccapurple;
+    background-color: #999999;
     display: initial;
     @media only screen and (min-width: 800px) {
       display: none;
