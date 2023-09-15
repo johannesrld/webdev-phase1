@@ -5,6 +5,9 @@
   --cambridge-blue: oklch(65.45% 0.026 173.38);
   --indian-red: oklch(60.6% 0.159 23);
 }
+body {
+  min-width: fit-content; /*Fixes an annoying bug thing on chrome*/
+}
 
 main {
   max-width: 960px;
