@@ -54,7 +54,7 @@ main {
 }
 
 #main-header {
-  background-color: var(--onyx);
+  background-color: var(--burgundy);
   top: 0;
   left: 0;
   position: sticky;
@@ -62,13 +62,16 @@ main {
   grid-template:
     56px min-content / fit-content(90px)
     1fr fit-content(90px);
-  grid-template-areas: "lgo hdr ham"
-                       "nav nav nav";
+  grid-template-areas:
+    "lgo hdr ham"
+    "nav nav nav";
   padding: 0.5rem 0.5rem 0;
   gap: 0.5rem;
 
-  > h1, nav, burger-menu {
-    color: var(--snow);
+  > h1,
+  nav,
+  burger-menu {
+    color: var(--beige);
   }
   > img {
     grid-area: lgo;
