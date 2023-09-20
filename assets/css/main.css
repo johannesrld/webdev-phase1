@@ -10,7 +10,11 @@ body {
   background-color: var(--beige);
 }
 main {
+  padding-top: 2rem;
+  padding: 2rem 0.5rem;
+  margin: 0.5rem;
   max-width: 960px;
+
   @media only screen and (min-width: 900px) {
     display: flex;
     margin: 0 auto;
@@ -18,21 +22,31 @@ main {
     align-items: flex-start;
   }
   > aside {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: color-mix(in oklch, var(--beige), 5% black);
     display: none;
     @media only screen and (min-width: 900px) {
       display: initial;
-      width: 35%;
+      width: 32%;
       flex-shrink: 0;
     }
   }
   > #article-container {
+    --padding: 0.5rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: var(--padding);
+    padding-right: var(--padding);
     > article {
+      padding: 1rem;
+      background-color: color-mix(in oklch, var(--beige), 5% black);
+      border-radius: 5px;
+      > footer {
+        line-height: normal;
+      }
       @media only screen and (min-width: 900px) {
-        width: 48%;
-        height: 50%;
         flex-shrink: 0;
       }
     }
