@@ -51,13 +51,13 @@ main {
       }
     }
   }
+}
 
-  > aside,
-  > #article-container > article {
-    background-color: color-mix(in oklch, var(--beige), 5% black);
-    border: 1.5px solid color-mix(in oklch, var(--beige), 10% black);
-    border-radius: 5px;
-  }
+main > aside,
+main > #article-container > article {
+  background-color: color-mix(in oklch, var(--beige), 5% black);
+  border: 1.5px solid color-mix(in oklch, var(--beige), 10% black);
+  border-radius: 5px;
 }
 
 #main-header {
