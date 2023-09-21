@@ -15,7 +15,7 @@ main {
   margin: 0.5rem;
   max-width: 960px;
 
-  @media only screen and (min-width: 900px) {
+  @media (min-width: 900px) {
     display: flex;
     margin: 0 auto;
     flex-direction: row-reverse;
@@ -24,7 +24,7 @@ main {
   > aside {
     padding: 1rem;
     display: none;
-    @media only screen and (min-width: 900px) {
+    @media (min-width: 900px) {
       display: initial;
       width: 32%;
       flex-shrink: 0;
@@ -93,7 +93,7 @@ main {
   > #burger-menu {
     background-color: #999999;
     display: initial;
-    @media only screen and (min-width: 800px) {
+    @media (min-width: 800px) {
       display: none;
     }
     grid-area: ham;
@@ -109,7 +109,7 @@ main {
     display: none;
     grid-area: nav;
     align-self: center;
-    @media only screen and (min-width: 800px) {
+    @media (min-width: 800px) {
       display: initial;
     }
     > ul {
@@ -127,7 +127,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media only screen and (min-width: 800px) {
+  @media (min-width: 800px) {
     flex-direction: row;
     align-items: center;
   }
