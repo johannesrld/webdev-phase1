@@ -43,7 +43,7 @@ main {
       > footer {
         line-height: normal;
       }
-      @media only screen and (min-width: 900px) {
+      @media (min-width: 900px) {
         flex-shrink: 0;
       }
     }
