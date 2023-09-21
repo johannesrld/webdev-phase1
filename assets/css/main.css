@@ -5,31 +5,34 @@
   --cambridge-blue: oklch(65.45% 0.026 173.38);
   --burgundy: oklch(23% 0.092 31.03);
 }
+
 body {
-  min-width: fit-content; /*Fixes an annoying bug thing on chrome*/
   background-color: var(--beige);
+  min-width: fit-content; /*Fixes an annoying bug thing on chrome*/
 }
+
 main {
-  padding-top: 2rem;
-  padding: 2rem 0.5rem;
   margin: 0.5rem;
   max-width: 960px;
+  padding: 2rem 0.5rem;
 
   @media (min-width: 900px) {
-    display: flex;
-    margin: 0 auto;
-    flex-direction: row-reverse;
     align-items: flex-start;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 auto;
   }
+
   > aside {
-    padding: 1rem;
     display: none;
+    padding: 1rem;
     @media (min-width: 900px) {
       display: initial;
-      width: 32%;
       flex-shrink: 0;
+      width: 32%;
     }
   }
+
   > #article-container {
     --padding: 0.5rem;
     display: flex;
@@ -38,44 +41,46 @@ main {
     gap: var(--padding);
     padding-right: var(--padding);
     > article {
-      padding: 1rem;
       border-radius: 5px;
-      > footer {
-        line-height: normal;
-      }
+      padding: 1rem;
       @media (min-width: 900px) {
         flex-shrink: 0;
       }
+      > footer {
+        line-height: normal;
+      }
     }
   }
-  aside,
-  #article-container > article {
+
+  > aside,
+  > #article-container > article {
+    background-color: color-mix(in oklch, var(--beige), 5% black);
     border: 1.5px solid color-mix(in oklch, var(--beige), 10% black);
     border-radius: 5px;
-    background-color: color-mix(in oklch, var(--beige), 5% black);
   }
 }
 
 #main-header {
   background-color: var(--burgundy);
-  top: 0;
-  left: 0;
-  position: sticky;
   display: grid;
+  gap: 0.5rem;
   grid-template:
     56px min-content / fit-content(90px)
     1fr fit-content(90px);
   grid-template-areas:
     "lgo hdr ham"
     "nav nav nav";
+  left: 0;
   padding: 0.5rem 0.5rem 0;
-  gap: 0.5rem;
+  position: sticky;
+  top: 0;
 
   > h1,
-  nav,
-  burger-menu {
+  > nav,
+  > burger-menu {
     color: var(--beige);
   }
+
   > img {
     grid-area: lgo;
     max-height: 100%;
@@ -84,53 +89,56 @@ main {
   }
 
   > h1 {
-    grid-area: hdr;
-    font-size: clamp(2vw, 8vw, 2em);
-    white-space: nowrap;
     align-self: center;
+    font-size: clamp(2vw, 8vw, 2em);
+    grid-area: hdr;
+    white-space: nowrap;
   }
 
   > #burger-menu {
+    align-self: center;
     background-color: #999999;
     display: initial;
+    grid-area: ham;
+    height: 50px;
+    place-self: center;
+    width: 50px;
     @media (min-width: 800px) {
       display: none;
     }
-    grid-area: ham;
-    width: 50px;
-    height: 50px;
-    place-self: center;
-    align-self: center;
   }
 
   > nav {
-    padding: 0;
-    margin: 0;
+    align-self: center;
     display: none;
     grid-area: nav;
-    align-self: center;
+    margin: 0;
+    padding: 0;
     @media (min-width: 800px) {
       display: initial;
     }
+
     > ul {
-      padding-left: 1rem;
-      padding-bottom: 0.5rem;
-      margin: 0 auto;
       display: flex;
       gap: 1.5rem;
+      margin: 0 auto;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
     }
   }
 }
 
 #main-footer {
-  height: 10vh;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  height: 10vh;
+
   @media (min-width: 800px) {
-    flex-direction: row;
     align-items: center;
+    flex-direction: row;
   }
+
   > ul {
     display: flex;
     gap: 1.5rem;
