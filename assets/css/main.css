@@ -23,8 +23,6 @@ main {
   }
   > aside {
     padding: 1rem;
-    border-radius: 5px;
-    background-color: color-mix(in oklch, var(--beige), 5% black);
     display: none;
     @media only screen and (min-width: 900px) {
       display: initial;
@@ -41,7 +39,6 @@ main {
     padding-right: var(--padding);
     > article {
       padding: 1rem;
-      background-color: color-mix(in oklch, var(--beige), 5% black);
       border-radius: 5px;
       > footer {
         line-height: normal;
@@ -50,6 +47,12 @@ main {
         flex-shrink: 0;
       }
     }
+  }
+  aside,
+  #article-container > article {
+    border: 1.5px solid color-mix(in oklch, var(--beige), 10% black);
+    border-radius: 5px;
+    background-color: color-mix(in oklch, var(--beige), 5% black);
   }
 }
 
