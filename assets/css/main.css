@@ -23,7 +23,7 @@ main {
     margin: 0 auto;
   }
 
-  > aside {
+  & > aside {
     display: none;
     padding: 1rem;
     @media (min-width: 900px) {
@@ -33,31 +33,30 @@ main {
     }
   }
 
-  > #article-container {
+  & > #article-container {
     --padding: 0.5rem;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     gap: var(--padding);
     padding-right: var(--padding);
-    > article {
+    & > article {
       border-radius: 5px;
       padding: 1rem;
       @media (min-width: 900px) {
         flex-shrink: 0;
       }
-      > footer {
+      & > footer {
         line-height: normal;
       }
     }
   }
-}
-
-main > aside,
-main > #article-container > article {
-  background-color: color-mix(in oklch, var(--beige), 5% black);
-  border: 1.5px solid color-mix(in oklch, var(--beige), 10% black);
-  border-radius: 5px;
+  & > aside,
+  & > #article-container > article {
+    background-color: color-mix(in oklch, var(--beige), 5% black);
+    border: 1.5px solid color-mix(in oklch, var(--beige), 10% black);
+    border-radius: 5px;
+  }
 }
 
 #main-header {
@@ -75,27 +74,27 @@ main > #article-container > article {
   position: sticky;
   top: 0;
 
-  > h1,
-  > nav,
-  > #burger-menu {
+  & > h1,
+  & > nav,
+  & > #burger-menu {
     color: var(--beige);
   }
 
-  > img {
+  & > img {
     grid-area: lgo;
     max-height: 100%;
     object-fit: contain;
     place-self: center;
   }
 
-  > h1 {
+  & > h1 {
     align-self: center;
     font-size: clamp(2vw, 8vw, 2em);
     grid-area: hdr;
     white-space: nowrap;
   }
 
-  > #burger-menu {
+  & > #burger-menu {
     align-self: center;
     background-color: #999999;
     display: initial;
@@ -108,7 +107,7 @@ main > #article-container > article {
     }
   }
 
-  > nav {
+  & > nav {
     align-self: center;
     display: none;
     grid-area: nav;
@@ -118,7 +117,7 @@ main > #article-container > article {
       display: initial;
     }
 
-    > ul {
+    & > ul {
       display: flex;
       gap: 1.5rem;
       margin: 0 auto;
@@ -139,7 +138,7 @@ main > #article-container > article {
     flex-direction: row;
   }
 
-  > ul {
+  & > ul {
     display: flex;
     gap: 1.5rem;
   }
