@@ -77,7 +77,7 @@ main > #article-container > article {
 
   > h1,
   > nav,
-  > burger-menu {
+  > #burger-menu {
     color: var(--beige);
   }
 
