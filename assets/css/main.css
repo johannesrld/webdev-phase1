@@ -35,7 +35,8 @@ main {
     gap: var(--padding);
     & > article {
       border-radius: 5px;
-      padding: 1rem;
+      padding: 0 1rem 1rem;
+
       & > footer {
         line-height: normal;
       }
