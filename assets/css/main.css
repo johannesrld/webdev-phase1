@@ -12,6 +12,7 @@
     background-color: var(--beige);
     min-width: fit-content; /*Fixes an annoying bug thing on chrome*/
   }
+
   #main-header {
     background-color: var(--burgundy);
     display: grid;
@@ -109,12 +110,11 @@
       border: 1.5px solid color-mix(in oklch, var(--beige), 10% black);
       border-radius: 5px;
     }
-  }
-
-  footer {
-    font-style: italic;
-    font-size: 0.88rem;
-    color: color-mix(in oklch, black, 45% white); /* 45% lighter */
+    footer {
+      font-style: italic;
+      font-size: 0.88rem;
+      color: color-mix(in oklch, black, 45% white); /* 45% lighter */
+    }
   }
 
   #main-footer {
