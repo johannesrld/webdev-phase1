@@ -19,6 +19,12 @@ main > aside {
     display: none;
     padding: 1rem;
 }
+
+footer {
+  font-style: italic;
+  font-size: 0.88rem;
+  color: color-mix(in oklch, black, 45% white); /* 45% lighter */
+}
 main {
   max-width: 960px;
   & > #article-container {
