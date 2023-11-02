@@ -17,7 +17,7 @@ body {
 
 main > aside {
     display: none;
-    padding: 1rem;
+    padding: 0 1rem 1rem;
 }
 
 footer {
