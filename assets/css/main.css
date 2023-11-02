@@ -11,23 +11,22 @@ body {
   min-width: fit-content; /*Fixes an annoying bug thing on chrome*/
 }
 
-main {
-  margin: 0.5rem;
-  max-width: 960px;
-  padding: 2rem 0.5rem;
+#content-wrapper {
+  padding: 2rem 0.5rem 0;
+}
 
-  & > aside {
+main > aside {
     display: none;
     padding: 1rem;
-  }
-
+}
+main {
+  max-width: 960px;
   & > #article-container {
     --padding: 0.5rem;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     gap: var(--padding);
-    padding-right: var(--padding);
     & > article {
       border-radius: 5px;
       padding: 1rem;
@@ -128,13 +127,16 @@ main {
     flex-shrink: 0;
     width: 32%;
   }
-  main > nav {
+  #main-header > nav {
     display: initial;
   }
   #article-container > article {
     flex-shrink: 0;
   }
-  #burger-menu {
+  #article-container {
+    padding-right: 0.5rem;
+  }
+  #main-header > #burger-menu {
     display: none;
   }
   #main-footer {
