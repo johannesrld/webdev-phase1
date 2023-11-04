@@ -6,6 +6,7 @@
     --beige: oklch(97.95% 0.015 90.09);
     --cambridge-blue: oklch(65.45% 0.026 173.38);
     --burgundy: oklch(23% 0.092 31.03);
+    --padding: 0.5rem;
   }
 
   body {
@@ -13,10 +14,17 @@
     min-width: fit-content; /*Fixes an annoying bug thing on chrome*/
   }
 
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+  }
+
   #main-header {
     background-color: var(--burgundy);
     display: grid;
-    gap: 0.5rem;
+    gap: var(--padding);
     grid-template:
       56px min-content / fit-content(90px)
       1fr fit-content(90px);
@@ -24,7 +32,7 @@
       "lgo hdr ham"
       "nav nav nav";
     left: 0;
-    padding: 0.5rem 0.5rem 0;
+    padding: var(--padding) var(--padding) 0;
     position: sticky;
     top: 0;
 
@@ -36,8 +44,6 @@
 
     & > img {
       grid-area: lgo;
-      max-height: 100%;
-      object-fit: contain;
       place-self: center;
     }
 
@@ -69,8 +75,7 @@
         display: flex;
         gap: 1.5rem;
         margin: 0 auto;
-        padding-bottom: 0.5rem;
-        padding-left: 1rem;
+        padding: 0 1rem 0.5rem;
       }
     }
   }
@@ -81,9 +86,8 @@
 
   main {
     max-width: 960px;
-
+    gap: var(--padding);
     & > #article-container {
-      --padding: 0.5rem;
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -104,13 +108,14 @@
       padding: 0 1rem 1rem;
     }
 
+    & img,
     & > aside,
     & > #article-container > article {
       background-color: color-mix(in oklch, var(--beige), 5% black);
       border: 1.5px solid color-mix(in oklch, var(--beige), 10% black);
       border-radius: 5px;
     }
-    footer {
+    & footer {
       font-style: italic;
       font-size: 0.88rem;
       color: color-mix(in oklch, black, 45% white); /* 45% lighter */
@@ -148,10 +153,6 @@
 
     #article-container > article {
       flex-shrink: 0;
-    }
-
-    #article-container {
-      padding-right: 0.5rem;
     }
 
     #main-header > #burger-menu {
