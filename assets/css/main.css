@@ -92,10 +92,18 @@
       flex-direction: column;
       flex-wrap: nowrap;
       gap: var(--padding);
+      max-height: fit-content;
 
       & > article {
         border-radius: 5px;
         padding: 0 1rem 1rem;
+
+        & img {
+          justify-content: center;
+          float: left;
+          max-width: 50%;
+          margin-right: 0.8rem;
+        }
 
         & > footer {
           line-height: normal;
