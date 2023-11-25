@@ -1,39 +1,53 @@
-import currency_list from "./currencyCodes.js";
+import currencyCodes from "./currencyCodes.js";
 
-const apiKey = "" as const;
+const apiKey = "qdxvVhmu2hXWag99cJvt4A==jRYsB1KnGXNzZdIB" as const;
 const baseApi = "https://api.api-ninjas.com/v1/convertcurrency" as const;
-
-type currencyResp = {
-    new_amount: number,
-    new_currency: string,
-    old_currency: string,
-    old_amount: number
+type currencyData = {
+  new_amount: number,
+  new_currency: keyof typeof currencyCodes,
+  old_currency: keyof typeof currencyCodes,
+  old_amount: number
+  error?: string
 };
+
 const submitButton = document.getElementById("submit-button") as HTMLButtonElement;
-const currencyInput = document.getElementById("initial-amount") as HTMLInputElement;
-const fromCurrency = document.getElementById("from-currency") as HTMLSelectElement;
-const toCurrency = document.getElementById("to-currency") as HTMLSelectElement;
+const currencyInput = document.getElementById("currency-amount") as HTMLInputElement;
+const fromCurrencyDropDown = document.getElementById("from-currency") as HTMLSelectElement;
+const toCurrencyDropDown = document.getElementById("to-currency") as HTMLSelectElement;
 const output = document.getElementById("currency-output") as HTMLDivElement;
+const outputContent = document.createElement("p");
+output.appendChild(outputContent);
 
-for (const [currencyName, isoCode] of currency_list) {
-    [fromCurrency, toCurrency].forEach(elem => {
-        elem.add(new Option(currencyName, isoCode));
-    })
+function formatCurrency(isoCode: keyof typeof currencyCodes, value: number) {
+  return `${(new Intl.NumberFormat(undefined, {
+    style: "currency",
+    currency: isoCode,
+    currencyDisplay: "narrowSymbol",
+    localeMatcher: "lookup",
+  })).format(value)} ${currencyCodes[isoCode]}` //This would return something like "$1.20 Australian Dollars", "€0.88 Euro"
 }
-submitButton.addEventListener("keypress", ev => {
-    ev.preventDefault();
-    const requestUrl = baseApi + `?have=${fromCurrency.value}&want=${toCurrency.value}&amount=${currencyInput.value}`;
 
-    fetch(requestUrl, { method: "GET", headers: { "X-Api-Key": apiKey }, })
-        .then(resp => {
-            if (resp.ok === false) throw "";
-            return resp.json();
-        })
-        .then((currencyData: currencyResp) => {
-            // Ideally I would use Intl.Numberformat to display currency correctly
-            // e.g. Japanese Yen would show "￥9876,90583" etc.
-            output.innerHTML = `<p>${currencyData.new_amount}</p>`
-        })
-        .catch();
+for (const [currencyName, isoCode] of Object.entries(currencyCodes)) {
+  [fromCurrencyDropDown, toCurrencyDropDown].forEach(element => {
+    element.add(new Option(isoCode, currencyName));
+  })
+}
+
+submitButton.addEventListener('click', async (event) => {
+  event.preventDefault();
+  const toCurrency = toCurrencyDropDown.value as keyof typeof currencyCodes
+  const fromCurrency = fromCurrencyDropDown.value as keyof typeof currencyCodes
+
+  const requestUrl = `${baseApi}?have=${fromCurrency}&want=${toCurrency}&amount=${currencyInput.value}`;
+
+  const request = fetch(requestUrl, { headers: { "X-Api-Key": apiKey }, method: "GET" });
+  outputContent.textContent = "Calculating value..."; // technically we're not but shhhhhh!!!
+  submitButton.disabled = true;
+  try {
+    const response = await request
+    const data: currencyData = await response.json()
+    outputContent.textContent = `${formatCurrency(fromCurrency, data.old_amount)} is worth ${formatCurrency(toCurrency, data.new_amount)}`
+  } finally {
+    submitButton.disabled = false;
+  }
 })
-// use dat ato build message and set dom element to said message
