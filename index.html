@@ -29,9 +29,10 @@
           <h2>aaaaaaaaaaaaaaaaa</h2>
           <label for="from-currency">From Currency:</label>
           <select name="currency-selector" id="from-currency"></select>
-          <input type="number" min="0" step="any" name="currency-amount" id="currency-amount">
+          <input type="number" min="0.01" step="0.01" name="currency-amount" id="currency-amount" placeholder="Enter amount" onmousewheel="return false"> 
           <label for="to-currency">To Currency:</label>
           <select id="to-currency"></select>
+          <button id="submit-button">Convert</button>
           <div id="currency-output"></div>
         </section>
         <section>
