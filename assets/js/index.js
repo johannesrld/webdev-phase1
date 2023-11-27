@@ -38,11 +38,9 @@ submitButton.addEventListener('click', async (event) => {
     submitButton.disabled = true;
     try {
         const request = fetch(requestUrl, { headers: { "X-Api-Key": apiKey }, method: "GET" });
-
         outputContent.textContent = "Calculating value..."; // technically we're not but shhhhhh!!!
 
-        const response = await request;
-        const data = await response.json();
+        const data = await request.json();
 
         outputContent.textContent = `${formatCurrency(fromCurrency, data.old_amount)} is worth ${formatCurrency(toCurrency, data.new_amount)}`;
     }
