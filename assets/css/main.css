@@ -19,6 +19,11 @@ img {
   overflow: hidden;
 }
 
+#currency-wrapper {
+  display: grid;
+  gap: 0.8rem;
+}
+
 #main-header {
   background-color: var(--burgundy);
   display: grid;
