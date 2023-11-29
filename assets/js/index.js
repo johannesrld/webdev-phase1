@@ -38,7 +38,6 @@ submitButton.addEventListener('click', async (event) => {
     submitButton.disabled = true;
     try {
         const request = fetch(requestUrl, { headers: { "X-Api-Key": apiKey }, method: "GET" });
-
         outputContent.textContent = "Calculating value..."; // technically we're not but shhhhhh!!!
 
         const response = await request;
