@@ -55,6 +55,9 @@ submitButton.addEventListener('click', async (event) => {
 
     outputContent.textContent = `${formatCurrency(fromCurrency, data.old_amount)} is worth ${formatCurrency(toCurrency, data.new_amount)}`;
   }
+  catch (e) {
+    outputContent.textContent = "Failed to fetch the currency conversion"
+  }
   finally {
     submitButton.disabled = false;
   }
