@@ -22,6 +22,19 @@ img {
 #currency-wrapper {
   display: grid;
   gap: 0.4rem;
+  & > button, input {
+    border-radius: 5px;
+    border-style: none;
+    height: 1.5rem;
+    border-style: none;
+    background-color: color-mix(in oklch, var(--beige), 15% black);
+    &:hover {
+      background-color: color-mix(in oklch, var(--beige), 20% black);
+    }
+  }
+  & > label {
+    text-align: center;
+  }
 }
 
 #main-header {
